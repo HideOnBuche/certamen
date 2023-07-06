@@ -110,8 +110,10 @@ export function TodoList() {
               <input ref={rutRef} type="text" className="form-control" id="" placeholder="Ingrese su rut" />
             </div>
 
-            <button onClick={agregarTarea} className="btn btn-outline-success">Agregar</button>
-            <button onClick={eliminarTareasCompletadas} className="btn btn-outline-danger">Eliminar</button>
+            <button onClick={agregarTarea} className="btn btn-outline-success"><i class="bi bi-person-fill-add">
+                </i> Agregar </button>
+            <button onClick={eliminarTareasCompletadas} className="btn btn-outline-danger"><i class="bi bi-archive">
+                </i> Borrar </button>
           </div>
         </div>
 
