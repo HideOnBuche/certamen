@@ -83,6 +83,13 @@ export function TodoList() {
     setTodos(newTodos);
   };
 
+  const editarTarea = (id, fieldName, newValue) => {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    todo[fieldName] = newValue;
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <div className="container" style={{ display: 'flex' }}>
@@ -118,7 +125,7 @@ export function TodoList() {
         </div>
 
         <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <img src="traba.jpg" width={300} alt=""></img>
+          <img src="../registro-1.png" width={300} alt=""></img>
         </div>
       </div>
 
@@ -135,7 +142,7 @@ export function TodoList() {
         </thead>
         <tbody>
           {todos.map((todo) => (
-            <TodoItem todo={todo} key={todo.id} cambiarEstado={cambiarEstadoTarea} />
+            <TodoItem todo={todo} key={todo.id} cambiarEstado={cambiarEstadoTarea} editarTarea={editarTarea}/>
           ))}
         </tbody>
       </table>
